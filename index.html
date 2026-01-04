@@ -28,6 +28,16 @@
         </section>
 
         <section class="content-block">
+            <h2>Extending Med-PaLM 2 beyond language</h2>
+            <p>The practice of medicine is inherently multi-modal and incorporates information from images, electronic health records, sensors, wearables, genomics and more. We believe AI systems that leverage these data at scale using self-supervised learning with careful consideration of privacy, safety and health equity will be the foundation of the next generation of medical AI systems that scale world-class healthcare to everyone.</p>
+            <p>Building on the <a href="https://arxiv.org/pdf/2303.03378.pdf">“PaLM-E” vision-language model</a>, we designed a multimodal version of Med-PaLM, called <a href="https://arxiv.org/abs/2307.14334">Med-PaLM M</a>. This system can synthesize and communicate information from images like chest X-rays, mammograms, and more to help doctors provide better patient care. Within scope are several modalities alongside language: dermatology, retina, radiology (3D and 2D), pathology, health records and genomics. We’re excited to explore how this technology can benefit clinicians in the future.</p>
+            <div class="video-placeholder" style="background-color: #f0f0f0; height: 300px; display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+                <p style="color: #666;">[Video/Image Placeholder: Med-PaLM M Multimodal Demo]</p>
+            </div>
+            <p class="caption" style="font-size: 0.8rem; color: #666;">*Example only. This image reflects early exploration of Med-PaLM M's future capabilities.</p>
+        </section>
+
+        <section class="content-block">
             <h2>Introduction</h2>
             <p>Med-PaLM is a large language model (LLM) designed to provide high quality answers to medical questions. Our second version, Med-PaLM 2, is one of the research models that powers <a href="#">MedLM</a>– a family of foundation models fine-tuned for the healthcare industry. MedLM is now available to Google Cloud customers who have been exploring a range of applications, from basic tasks to complex workflows.</p>
             <p>Med-PaLM harnesses the power of Google’s large language models, which we have aligned to the medical domain and evaluated using medical exams, medical research, and consumer queries. Our first version of Med-PaLM, <a href="#">preprinted in late 2022</a> and <a href="#">published in Nature in July 2023</a>, was the first AI system to surpass the pass mark (>60%) in the U.S. Medical Licensing Examination (USMLE) style questions. Med-PaLM also generates accurate, helpful long-form answers to consumer health questions, as judged by panels of physicians and users.</p>
@@ -63,8 +73,29 @@
         <section class="content-block">
             <h2>Evaluating answer quality</h2>
             <p>We assessed Med-PaLM and Med-PaLM 2 against a benchmark we call ‘MultiMedQA’, which combines seven question answering datasets spanning professional medical exams, medical research, and consumer queries. Med-PaLM was the first AI system to obtain a passing score on USMLE-style questions from the MedQA dataset, with an accuracy of 67.6%. Med-PaLM 2 improves on this further with state of the art performance of 86.5%.</p>
+            <p>Importantly, in this work we go beyond multiple-choice accuracy to measure and improve model capabilities in medical question answering. Our model’s long-form answers were tested against several criteria — including scientific factuality, precision, medical consensus, reasoning, bias, and likelihood of possible harm — which were evaluated by clinicians and non-clinicians from a range of backgrounds and countries. Both Med-PaLM and Med-PaLM 2 performed encouragingly across three datasets of consumer medical questions. In a pairwise study, Med-PaLM 2 answers were preferred to physician answers across eight of nine axes considered.</p>
             <img src="https://storage.googleapis.com/gweb-research2023-media/images/Microsite_MedPalm_Graph1.width-1250.png" alt="Graph comparing models">
             <p>In a pairwise study, Med-PaLM 2 answers were preferred to physician answers across eight of nine axes considered.</p>
+
+            <div class="carousel-container">
+                <h3>Check out how Med-PaLM 2 answers medical questions</h3>
+                <div class="carousel-wrapper">
+                    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide active">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPalm_Carousel1.width-800.png" alt="Med-PaLM Example 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPalm_Carousel2.width-800.png" alt="Med-PaLM Example 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPalm_Carousel3.width-800.png" alt="Med-PaLM Example 3">
+                        </div>
+                    </div>
+                    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                </div>
+                <p class="disclaimer">*Examples only. Med-PaLM 2 is currently being evaluated to ensure safe and responsible use.</p>
+            </div>
         </section>
 
         <section class="content-block">
@@ -76,8 +107,194 @@
         <section class="content-block">
             <h2>Limitations</h2>
             <p>While Med-PaLM 2 reached state-of-the-art performance on several multiple-choice medical question answering benchmarks, and our human evaluation shows answers compare favorably to physician answers across several clinically important axes, we know that more work needs to be done to ensure these models are safely and effectively deployed.</p>
+            <p>Careful consideration will need to be given to the ethical deployment of this technology including rigorous quality assessment in different clinical settings with guardrails to mitigate against risks. For example, the potential harms of using a LLM for diagnosing or treating an illness are much greater than using a LLM for information about a disease or medication. Additional research will be needed to assess LLMs used in healthcare for homogenization and amplification of biases and security vulnerabilities inherited from base models.</p>
+            <p>We dive into many important areas for further research in our <a href="#">Med-PaLM</a> and <a href="#">Med-PaLM 2</a> papers.</p>
+        </section>
+
+        <section class="press">
+            <div class="press-content">
+                <h2>In the press</h2>
+                <div class="press-grid">
+                    <a href="https://www.scientificamerican.com/article/ai-chatbots-can-diagnose-medical-conditions-at-home-how-good-are-they/" class="press-item">
+                        <div class="press-image">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPaLM_ScientificAmerican.width-800.png" alt="Scientific American">
+                        </div>
+                        <div class="press-text">
+                            <span class="label">Article</span>
+                            <h3>AI Chatbots Can Diagnose Medical Conditions at Home. How Good Are They?</h3>
+                            <span class="source">Scientific American</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cnbc.com/2023/03/14/googles-medical-ai-might-soon-answer-questions-about-health.html" class="press-item">
+                        <div class="press-image">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPaLM_CNBC.width-800.png" alt="CNBC">
+                        </div>
+                        <div class="press-text">
+                            <span class="label">Article</span>
+                            <h3>Google’s working on an updated version of its medical A.I. that can answer health questions</h3>
+                            <span class="source">CNBC</span>
+                        </div>
+                    </a>
+                    <a href="https://www.medpagetoday.com/special-reports/exclusives/103522" class="press-item">
+                        <div class="press-image">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPaLM_MedPAGE.width-800.png" alt="Med Page Today">
+                        </div>
+                        <div class="press-text">
+                            <span class="label">Article</span>
+                            <h3>Google AI Performs at 'Expert' Level on U.S. Medical Licensing Exam</h3>
+                            <span class="source">Med Page Today</span>
+                        </div>
+                    </a>
+                    <a href="https://www.newscientist.com/article/2355689-googles-ai-is-best-yet-at-answering-medical-and-health-questions/" class="press-item">
+                        <div class="press-image">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPaLM_NewScientist.width-800.png" alt="New Scientist">
+                        </div>
+                        <div class="press-text">
+                            <span class="label">Article</span>
+                            <h3>Google's AI is best yet at answering medical and health questions</h3>
+                            <span class="source">New Scientist</span>
+                        </div>
+                    </a>
+                    <a href="https://www.economist.com/by-invitation/2023/02/28/a-bioethicist-and-a-professor-of-medicine-on-regulating-ai-in-health-care" class="press-item">
+                        <div class="press-image">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPaLM_TheEconomist.width-800.png" alt="The Economist">
+                        </div>
+                        <div class="press-text">
+                            <span class="label">Article</span>
+                            <h3>A bioethicist and a professor of medicine on regulating AI in health care</h3>
+                            <span class="source">The Economist</span>
+                        </div>
+                    </a>
+                    <a href="https://www.advisory.com/daily-briefing/2023/01/23/ai-exam" class="press-item">
+                        <div class="press-image">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPaLM_CNBC.width-800.png" alt="Advisory Board">
+                        </div>
+                        <div class="press-text">
+                            <span class="label">Article</span>
+                            <h3>Are AI doctors on the horizon?</h3>
+                            <span class="source">Advisory Board</span>
+                        </div>
+                    </a>
+                    <a href="https://www.statnews.com/2023/04/13/google-artificial-intelligence-medpalm2-gpt4/" class="press-item">
+                        <div class="press-image">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPaLM_STAT.width-800.jpg" alt="STAT">
+                        </div>
+                        <div class="press-text">
+                            <span class="label">Article</span>
+                            <h3>Google will let health care customers test its generative AI model, ramping up rivalry with GPT-4</h3>
+                            <span class="source">STAT</span>
+                        </div>
+                    </a>
+                    <a href="https://www.mobihealthnews.com/news/google-offer-limited-access-medical-llm" class="press-item">
+                        <div class="press-image">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPaLM_MoibleHealth.width-800.png" alt="Mobi Health News">
+                        </div>
+                        <div class="press-text">
+                            <span class="label">Article</span>
+                            <h3>Google to offer limited access to medical LLM</h3>
+                            <span class="source">Mobi Health News</span>
+                        </div>
+                    </a>
+                    <a href="https://www.forbes.com/sites/davidchou/2023/03/21/how-tech-leaders-compete-in-the-battle-of-healthcare-ai/?sh=480154006c4c" class="press-item">
+                        <div class="press-image">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPaLM_Forbes.width-800.png" alt="Forbes">
+                        </div>
+                        <div class="press-text">
+                            <span class="label">Article</span>
+                            <h3>How Tech Leaders Compete In The Battle Of Healthcare AI</h3>
+                            <span class="source">Forbes</span>
+                        </div>
+                    </a>
+                    <a href="https://cloud.google.com/blog/topics/healthcare-life-sciences/introducing-medlm-for-the-healthcare-industry" class="press-item">
+                        <div class="press-image">
+                            <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPaLM_CloudBlog.width-800.jpg" alt="Google Cloud Blog">
+                        </div>
+                        <div class="press-text">
+                            <span class="label">Blog</span>
+                            <h3>MedLM: generative AI fine-tuned for the healthcare industry</h3>
+                            <span class="source">Google Cloud Blog</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="acknowledgements">
+            <div class="ack-content">
+                <h2>Acknowledgements</h2>
+                <div class="ack-group">
+                    <h3>Med-PaLM research:</h3>
+                    <p>Karan Singhal*, Shekoofeh Azizi*, Tao Tu*, S. Sara Mahdavi, Jason Wei, Hyung Won Chung, Nathan Scales, Ajay Tanwani, Heather Cole-Lewis, Stephen Pfohl, Perry Payne, Martin Seneviratne, Paul Gamble, Chris Kelly, Abubakr Babiker, Yu-Han Liu, Nathanael Schärli, Aakanksha Chowdhery, Philip Mansfield, Dina Demner-Fushman, Blaise Agüera y Arcas, Dale Webster, Greg S. Corrado, Yossi Matias, Katherine Chou, Juraj Gottweis, Nenad Tomasev, Yun Liu, Alvin Rajkomar, Joelle Barral, Christopher Semturs, Alan Karthikesalingam**, and Vivek Natarajan**</p>
+                </div>
+                <div class="ack-group">
+                    <h3>Med-PaLM 2 research:</h3>
+                    <p>Karan Singhal*, Tao Tu*, Juraj Gottweis*, Rory Sayres*, Ellery Wulczyn, Le Hou, Kevin Clark, Stephen Pfohl, Heather Cole-Lewis, Darlene Neal, Mike Schaekermann, Amy Wang, Mohamed Amin, Sami Lachgar, Philip Mansfield, Sushant Prakash, Bradley Green, Ewa Dominowska, Blaise Aguera y Arcas, Nenad Tomasev, Yun Liu, Renee Wong, Christopher Semturs, S. Sara Mahdavi, Joelle Barral, Dale Webster, Greg S. Corrado, Yossi Matias, Shekoofeh Azizi**, Alan Karthikesalingam**, Vivek Natarajan**</p>
+                </div>
+                <div class="ack-group">
+                    <h3>Med-PaLM M research:</h3>
+                    <p>Tao Tu*, Shekoofeh Azizi*, Danny Driess, Mike Schaekermann, Mohamed Amin, Pi-Chuan Chang, Andrew Carroll, Chuck Lau, Ryutaro Tanno, Ira Ktena, Basil Mustafa, Aakanksha Chowdhery, Yun Liu, Simon Kornblith, David Fleet, Philip Mansfield, Sushant Prakash, Renee Wong, Sunny Virmani, Christopher Semturs, S Sara Mahdavi, Bradley Green, Ewa Dominowska, Blaise Aguera y Arcas, Joelle Barral, Dale Webster, Greg S. Corrado, Yossi Matias, Karan Singhal, Pete Florence, Alan Karthikesalingam** and Vivek Natarajan**</p>
+                </div>
+                <p class="small-note">* - equal contributions</p>
+                <p class="small-note">** - equal leadership</p>
+
+                <div class="ack-group">
+                    <h3>Additional contributors:</h3>
+                    <p>Preeti Singh, Kavita Kulkarni, Jonas Kemp, Anna Iurchenko, Lauren Winer, Will Vaughan, Le Hou, Jimmy Hu, Yuan Liu, Jonathan Krause, John Guilyard, Divya Pandya.</p>
+                </div>
+
+                <div class="ack-group">
+                    <p>We thank Michael Howell, Boris Babenko, Naama Hammel, Cameron Chen, Basil Mustafa, David Fleet, Douglas Eck, Simon Kornblith, Fayruz Kibria, Gordon Turner, Lisa Lehmann, Ivor Horn, Maggie Shiels, Shravya Shetty, Jukka Zitting, Evan Rappaport, Lucy Marples, Viknesh Sounderajah, Ali Connell, Jan Freyberg, Dave Steiner, Cian Hughes, Brett Hatfield, SiWai Man, Gary Parakkal, Sudhanshu Sharma, Megan Jones-Bell, Susan Thomas, Martin Ho, Sushant Prakash, Bradley Green, Ewa Dominowska, Frederick Liu, Kate Weber, Annisah Um’rani, Laura Culp, and Xuezhi Wang for their assistance, insights, and feedback during our research.</p>
+                    <p>We are also grateful to Yossi Matias, Karen DeSalvo, Zoubin Ghahramani, James Manyika, and Jeff Dean for their support throughout this project.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="discover-more">
+            <h2>Discover more</h2>
+            <div class="discover-grid">
+                <a href="https://cloud.google.com/blog/topics/healthcare-life-sciences/sharing-google-med-palm-2-medical-large-language-model" class="discover-item">
+                    <span class="label">Blog</span>
+                    <h3>A responsible path to generative AI in healthcare</h3>
+                </a>
+                <a href="https://blog.google/technology/health/ai-llm-medpalm-research-thecheckup/" class="discover-item">
+                    <span class="label">Blog</span>
+                    <h3>Our latest health AI research updates</h3>
+                </a>
+                <a href="https://blog.google/technology/ai/ai-developers-google-cloud-workspace/" class="discover-item">
+                    <span class="label">Blog</span>
+                    <h3>The next generation of AI for developers and Google Workspace</h3>
+                </a>
+                <a href="https://ai.googleblog.com/2023/02/google-research-2022-beyond-health.html" class="discover-item">
+                    <span class="label">Blog</span>
+                    <h3>Google Research, 2022 & beyond: Health</h3>
+                </a>
+                <a href="https://health.google/" class="discover-item">
+                    <span class="label">Blog</span>
+                    <h3>Google Health</h3>
+                </a>
+            </div>
         </section>
     </main>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("carousel-slide");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
 
     <footer>
         <div class="footer-links">
