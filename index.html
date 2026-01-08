@@ -42,12 +42,28 @@
                 <li><a href="https://www.youtube.com/watch?v=3Ud-BMOCkDI&t=14s&ab_channel=Google">The Check Up</a></li>
                 <li><a href="https://cloud.google.com/blog/topics/healthcare-life-sciences/sharing-google-med-palm-2-medical-large-language-model">Google Cloud: Med-PaLM 2</a></li>
                 <li><a href="https://cloud.google.com/blog/topics/healthcare-life-sciences/introducing-medlm-for-the-healthcare-industry">Google Cloud: MedLM</a></li>
+                <li class="share-container">
+                    <button class="share-button" onclick="toggleShare()">Share</button>
+                    <div id="share-menu" class="share-menu">
+                        <a href="https://twitter.com/intent/tweet?text=http%3A//sites.research.google/gr/med-palm/" target="_blank">Twitter</a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//sites.research.google/gr/med-palm/" target="_blank">Facebook</a>
+                        <a href="https://www.linkedin.com/shareArticle?url=http%3A//sites.research.google/gr/med-palm/&mini=true" target="_blank">LinkedIn</a>
+                        <a href="mailto:?subject=Check%20out%20this%20site&body=Check%20out%20http%3A//sites.research.google/gr/med-palm/">Email</a>
+                    </div>
+                </li>
             </ul>
         </div>
 
         <section class="stats">
-            <h2>Med-PaLM 2 reached 86.5% accuracy on the MedQA medical exam benchmark in research.</h2>
-            <p>Since medicine is inherently multimodal, we have also introduced research on a multimodal version of Med-PaLM, called <a href="https://arxiv.org/abs/2307.14334">Med-PaLM M</a>. We are also <a href="https://blog.research.google/2023/08/multimodal-medical-ai.html">exploring a wide range</a> of other techniques to build medical AI systems that can bring information together from a wide range of data modalities.</p>
+            <div class="video-container ambient-video">
+                <video autoplay loop muted playsinline>
+                    <source src="https://storage.googleapis.com/gweb-research2023-media/media/Microsite_MedPalm_introGraph.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="stats-content">
+                <h2>Med-PaLM 2 reached 86.5% accuracy on the MedQA medical exam benchmark in research.</h2>
+                <p>Since medicine is inherently multimodal, we have also introduced research on a multimodal version of Med-PaLM, called <a href="https://arxiv.org/abs/2307.14334">Med-PaLM M</a>. We are also <a href="https://blog.research.google/2023/08/multimodal-medical-ai.html">exploring a wide range</a> of other techniques to build medical AI systems that can bring information together from a wide range of data modalities.</p>
+            </div>
         </section>
 
         <section class="content-block">
@@ -95,10 +111,10 @@
                     <p>Building on the <a href="https://arxiv.org/pdf/2303.03378.pdf">“PaLM-E”</a> vision-language model, we designed a multimodal version of Med-PaLM, called <a href="https://arxiv.org/abs/2307.14334">Med-PaLM M</a>. This system can synthesize and communicate information from images like chest X-rays, mammograms, and more to help doctors provide better patient care. Within scope are several modalities alongside language: dermatology, retina, radiology (3D and 2D), pathology, health records and genomics. We’re excited to explore how this technology can benefit clinicians in the future.</p>
                 </div>
                 <div class="image-content">
-                    <div class="video-placeholder">
-                         <div class="video-mockup">
-                             <span>Multimodal Demo Video</span>
-                         </div>
+                    <div class="video-container">
+                         <video autoplay loop muted playsinline controls>
+                             <source src="https://storage.googleapis.com/gweb-research2023-media/media/Microsite_MedPaLM_XRay.mp4" type="video/mp4">
+                         </video>
                     </div>
                     <p class="caption">*Example only. This image reflects early exploration of Med-PaLM M's future capabilities.</p>
                 </div>
@@ -265,26 +281,6 @@
         </div>
     </footer>
 
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("carousel-slide");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].className = slides[i].className.replace(" active", "");
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex-1].style.display = "block";
-            slides[slideIndex-1].className += " active";
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
