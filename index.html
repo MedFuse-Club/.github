@@ -9,12 +9,14 @@
 </head>
 <body>
 
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header>
         <div class="brand">Google Research</div>
         <div class="product">Med-PaLM</div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero">
             <div class="hero-text">
                 <h1>Med-PaLM</h1>
@@ -96,9 +98,13 @@
                 </div>
                 <div class="image-content">
                     <div class="video-placeholder">
-                         <div class="video-mockup">
-                             <span>Multimodal Demo Video</span>
-                         </div>
+                        <video autoplay loop muted playsinline>
+                            <source src="https://storage.googleapis.com/gweb-research2023-media/videos/MedPaLM_M_Demo.mp4" type="video/mp4">
+                             <!-- Fallback for browsers that don't support video -->
+                             <div class="video-mockup">
+                                 <span>Multimodal Demo Video</span>
+                             </div>
+                        </video>
                     </div>
                     <p class="caption">*Example only. This image reflects early exploration of Med-PaLM M's future capabilities.</p>
                 </div>
@@ -265,26 +271,6 @@
         </div>
     </footer>
 
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("carousel-slide");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].className = slides[i].className.replace(" active", "");
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex-1].style.display = "block";
-            slides[slideIndex-1].className += " active";
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

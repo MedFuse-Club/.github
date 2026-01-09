@@ -6,6 +6,36 @@ body {
     line-height: 1.6;
 }
 
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1a73e8;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus states */
+button:focus, a:focus, input:focus {
+    outline: 2px solid #1a73e8;
+    outline-offset: 2px;
+}
+
+/* Specific focus adjustment for hero button so it looks nice */
+.button:focus {
+    outline: 3px solid #8ab4f8; /* Lighter blue for contrast against dark background if needed, but here button is blue */
+    outline-offset: 2px;
+}
+
 header {
     padding: 20px 40px;
     display: flex;
@@ -402,6 +432,14 @@ footer {
     justify-content: center;
     border-radius: 8px;
     margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-placeholder video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .video-mockup {
