@@ -6,15 +6,18 @@
     <title>Med-PaLM</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,500&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
         <div class="brand">Google Research</div>
         <div class="product">Med-PaLM</div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero">
             <div class="hero-text">
                 <h1>Med-PaLM</h1>
@@ -95,6 +98,12 @@
                     <p>Building on the <a href="https://arxiv.org/pdf/2303.03378.pdf">“PaLM-E”</a> vision-language model, we designed a multimodal version of Med-PaLM, called <a href="https://arxiv.org/abs/2307.14334">Med-PaLM M</a>. This system can synthesize and communicate information from images like chest X-rays, mammograms, and more to help doctors provide better patient care. Within scope are several modalities alongside language: dermatology, retina, radiology (3D and 2D), pathology, health records and genomics. We’re excited to explore how this technology can benefit clinicians in the future.</p>
                 </div>
                 <div class="image-content">
+                    <!-- TODO: Replace with <video> tag when asset is available
+                    <video autoplay loop muted playsinline class="ambient-video">
+                        <source src="MedPaLM_Multimodal.mp4" type="video/mp4">
+                        Fallback content
+                    </video>
+                    -->
                     <div class="video-placeholder">
                          <div class="video-mockup">
                              <span>Multimodal Demo Video</span>
@@ -264,27 +273,5 @@
             <a href="https://support.google.com/?hl=en">Help</a>
         </div>
     </footer>
-
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("carousel-slide");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].className = slides[i].className.replace(" active", "");
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex-1].style.display = "block";
-            slides[slideIndex-1].className += " active";
-        }
-    </script>
 </body>
 </html>
