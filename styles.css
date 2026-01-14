@@ -422,3 +422,42 @@ footer {
         flex-direction: column;
     }
 }
+
+/* Accessibility */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    background: #202124;
+    color: #fff;
+    z-index: 9999;
+    text-decoration: none;
+    font-weight: 500;
+    transition: top 0.3s;
+}
+
+.skip-link:not(:focus) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* Focus Styles */
+a:focus, button:focus, .prev:focus, .next:focus {
+    outline: 2px solid #1a73e8;
+    outline-offset: 2px;
+}
