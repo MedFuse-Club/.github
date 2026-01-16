@@ -6,6 +6,30 @@ body {
     line-height: 1.6;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.visually-hidden:focus {
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    background: #fff;
+    z-index: 1000;
+    padding: 10px;
+    top: 0;
+    left: 0;
+}
+
 header {
     padding: 20px 40px;
     display: flex;
