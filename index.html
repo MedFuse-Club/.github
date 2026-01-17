@@ -6,15 +6,18 @@
     <title>Med-PaLM</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,500&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
 </head>
 <body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
         <div class="brand">Google Research</div>
         <div class="product">Med-PaLM</div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero">
             <div class="hero-text">
                 <h1>Med-PaLM</h1>
@@ -69,7 +72,7 @@
             <div class="carousel-container">
                 <h3>Check out how Med-PaLM 2 answers medical questions</h3>
                 <div class="carousel-wrapper">
-                    <button class="prev" onclick="plusSlides(-1)">❮</button>
+                    <button class="prev">❮</button>
                     <div class="carousel-slides">
                         <div class="carousel-slide fade">
                             <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPalm_Carousel1.width-800.png" alt="Med-PaLM Example 1">
@@ -81,7 +84,7 @@
                             <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPalm_Carousel3.width-800.png" alt="Med-PaLM Example 3">
                         </div>
                     </div>
-                    <button class="next" onclick="plusSlides(1)">❯</button>
+                    <button class="next">❯</button>
                 </div>
                 <p class="disclaimer">*Examples only. Med-PaLM 2 is currently being evaluated to ensure safe and responsible use.</p>
             </div>
@@ -264,27 +267,5 @@
             <a href="https://support.google.com/?hl=en">Help</a>
         </div>
     </footer>
-
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("carousel-slide");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].className = slides[i].className.replace(" active", "");
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex-1].style.display = "block";
-            slides[slideIndex-1].className += " active";
-        }
-    </script>
 </body>
 </html>

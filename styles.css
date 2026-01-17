@@ -6,6 +6,49 @@ body {
     line-height: 1.6;
 }
 
+/* Accessibility */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.visually-hidden:focus {
+    clip: auto;
+    clip-path: none;
+    height: auto;
+    overflow: visible;
+    position: static;
+    white-space: normal;
+    width: auto;
+}
+
+.skip-link {
+    background: #1a73e8;
+    color: white;
+    font-weight: 700;
+    left: 50%;
+    padding: 4px;
+    position: absolute;
+    transform: translateY(-100%) translateX(-50%);
+    transition: transform 0.3s;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    transform: translateY(0%) translateX(-50%);
+}
+
+button:focus, a:focus {
+    outline: 2px solid #1a73e8;
+    outline-offset: 2px;
+}
+
 header {
     padding: 20px 40px;
     display: flex;
