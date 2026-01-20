@@ -422,3 +422,68 @@ footer {
         flex-direction: column;
     }
 }
+
+/* Share Button */
+.share-container {
+    position: relative;
+    display: inline-block;
+}
+
+.share-button {
+    background: none;
+    border: none;
+    color: #1a73e8;
+    font-size: 16px; /* Match links size usually */
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    font-family: 'Google Sans', Arial, sans-serif;
+}
+
+.share-button:hover {
+    text-decoration: underline;
+}
+
+.share-menu {
+    display: none;
+    position: absolute;
+    bottom: 100%; /* Show above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 8px 0;
+    z-index: 1000;
+    margin-bottom: 10px;
+}
+
+.share-menu.show {
+    display: block;
+}
+
+.share-item {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #202124;
+    font-size: 14px;
+    text-align: left;
+    background: none;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.share-item:hover {
+    background-color: #f1f3f4;
+}
+
+.copy-link {
+    border-top: 1px solid #dadce0;
+    margin-top: 4px;
+    padding-top: 12px;
+}
