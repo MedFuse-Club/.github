@@ -6,15 +6,33 @@
     <title>Med-PaLM</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,500&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
         <div class="brand">Google Research</div>
         <div class="product">Med-PaLM</div>
+        <div class="share-container">
+            <button class="share-button" aria-label="Share" aria-haspopup="true" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                </svg>
+            </button>
+            <ul class="share-menu" role="menu">
+                <li role="none"><a href="#" class="share-twitter" target="_blank" rel="noopener noreferrer" role="menuitem">Twitter</a></li>
+                <li role="none"><a href="#" class="share-facebook" target="_blank" rel="noopener noreferrer" role="menuitem">Facebook</a></li>
+                <li role="none"><a href="#" class="share-linkedin" target="_blank" rel="noopener noreferrer" role="menuitem">LinkedIn</a></li>
+                <li role="none"><a href="#" class="share-email" role="menuitem">Email</a></li>
+                <li role="none"><button class="copy-link-button" role="menuitem">Copy link</button></li>
+            </ul>
+        </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero">
             <div class="hero-text">
                 <h1>Med-PaLM</h1>
@@ -264,27 +282,5 @@
             <a href="https://support.google.com/?hl=en">Help</a>
         </div>
     </footer>
-
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("carousel-slide");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].className = slides[i].className.replace(" active", "");
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex-1].style.display = "block";
-            slides[slideIndex-1].className += " active";
-        }
-    </script>
 </body>
 </html>
