@@ -6,6 +6,40 @@ body {
     line-height: 1.6;
 }
 
+/* Accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1a73e8;
+    color: white;
+    padding: 10px 20px;
+    z-index: 100;
+    text-decoration: none;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+:focus-visible {
+    outline: 2px solid #1a73e8;
+    outline-offset: 2px;
+}
+
 header {
     padding: 20px 40px;
     display: flex;
@@ -23,6 +57,77 @@ header {
     font-size: 20px;
     color: #202124;
     font-weight: 500;
+}
+
+/* Share Menu */
+.share-container {
+    position: relative;
+    margin-left: auto; /* Push to right */
+}
+
+.share-button {
+    background: none;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: #1a73e8;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.share-button:hover {
+    background-color: #f8f9fa;
+}
+
+.share-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background-color: white;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    width: 200px;
+    display: block;
+}
+
+.share-menu.hidden {
+    display: none;
+}
+
+.share-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.share-menu li {
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.share-menu li:last-child {
+    border-bottom: none;
+}
+
+.share-menu a, .share-menu button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    text-align: left;
+    text-decoration: none;
+    color: #202124;
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.share-menu a:hover, .share-menu button:hover {
+    background-color: #f8f9fa;
 }
 
 .hero {
