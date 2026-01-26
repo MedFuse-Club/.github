@@ -6,6 +6,23 @@ body {
     line-height: 1.6;
 }
 
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #1a73e8;
+    color: white;
+    padding: 8px 16px;
+    z-index: 100;
+    text-decoration: none;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
 header {
     padding: 20px 40px;
     display: flex;
@@ -23,6 +40,69 @@ header {
     font-size: 20px;
     color: #202124;
     font-weight: 500;
+}
+
+.share-container {
+    position: relative;
+    margin-left: auto;
+}
+
+.share-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #5f6368;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.share-button:hover {
+    background-color: #f1f3f4;
+    color: #202124;
+}
+
+.share-button[aria-expanded="true"] {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+}
+
+.share-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background-color: white;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    padding: 8px 0;
+}
+
+.share-menu[aria-hidden="false"] {
+    display: flex;
+}
+
+.share-link, .copy-link {
+    display: block;
+    padding: 10px 20px;
+    color: #202124;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: left;
+    border: none;
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.share-link:hover, .copy-link:hover {
+    background-color: #f1f3f4;
 }
 
 .hero {
