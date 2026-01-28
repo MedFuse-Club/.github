@@ -422,3 +422,121 @@ footer {
         flex-direction: column;
     }
 }
+
+/* Accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #1a73e8;
+    color: white;
+    padding: 10px 15px;
+    z-index: 100;
+    text-decoration: none;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* Global Focus */
+:focus-visible {
+    outline: 2px solid #1a73e8;
+    outline-offset: 2px;
+}
+
+/* Share Component */
+.share-container {
+    margin-left: auto; /* Push to right */
+    position: relative;
+}
+
+.share-button {
+    background: transparent;
+    border: none;
+    color: #5f6368;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.share-button:hover {
+    background-color: #f1f3f4;
+    color: #202124;
+}
+
+.share-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 8px 0;
+    width: 200px;
+    z-index: 1000;
+    display: none;
+    border: 1px solid #dadce0;
+}
+
+.share-menu[aria-hidden="false"] {
+    display: block;
+}
+
+.share-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.share-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #202124;
+    font-size: 14px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.share-item:hover {
+    background-color: #f1f3f4;
+}
+
+.copy-link-button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    border-top: 1px solid #dadce0;
+    cursor: pointer;
+    color: #1a73e8;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.copy-link-button:hover {
+    background-color: #f1f3f4;
+}
