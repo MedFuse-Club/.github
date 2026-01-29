@@ -6,15 +6,17 @@
     <title>Med-PaLM</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,500&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
         <div class="brand">Google Research</div>
         <div class="product">Med-PaLM</div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero">
             <div class="hero-text">
                 <h1>Med-PaLM</h1>
@@ -42,10 +44,27 @@
                 <li><a href="https://www.youtube.com/watch?v=3Ud-BMOCkDI&t=14s&ab_channel=Google">The Check Up</a></li>
                 <li><a href="https://cloud.google.com/blog/topics/healthcare-life-sciences/sharing-google-med-palm-2-medical-large-language-model">Google Cloud: Med-PaLM 2</a></li>
                 <li><a href="https://cloud.google.com/blog/topics/healthcare-life-sciences/introducing-medlm-for-the-healthcare-industry">Google Cloud: MedLM</a></li>
+                <li>
+                    <div class="share-container">
+                        <button class="share-button" aria-haspopup="true" aria-expanded="false">Share</button>
+                        <div class="share-menu" aria-hidden="true">
+                            <a href="#" class="share-link twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
+                            <a href="#" class="share-link facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+                            <a href="#" class="share-link linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            <a href="#" class="share-link email">Email</a>
+                            <button class="copy-link">Copy link</button>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
         <section class="stats">
+            <div class="video-placeholder stats-video">
+                 <div class="video-mockup">
+                     <span>Background Loop Video</span>
+                 </div>
+            </div>
             <h2>Med-PaLM 2 reached 86.5% accuracy on the MedQA medical exam benchmark in research.</h2>
             <p>Since medicine is inherently multimodal, we have also introduced research on a multimodal version of Med-PaLM, called <a href="https://arxiv.org/abs/2307.14334">Med-PaLM M</a>. We are also <a href="https://blog.research.google/2023/08/multimodal-medical-ai.html">exploring a wide range</a> of other techniques to build medical AI systems that can bring information together from a wide range of data modalities.</p>
         </section>
@@ -265,26 +284,5 @@
         </div>
     </footer>
 
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("carousel-slide");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].className = slides[i].className.replace(" active", "");
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex-1].style.display = "block";
-            slides[slideIndex-1].className += " active";
-        }
-    </script>
 </body>
 </html>
