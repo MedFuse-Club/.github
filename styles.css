@@ -118,6 +118,95 @@ header {
     font-weight: 500;
 }
 
+/* Share Menu */
+.share-container {
+    position: relative;
+    display: inline-block;
+}
+
+.share-button {
+    background: none;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: #1a73e8;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.share-button:hover {
+    background-color: #f1f3f4;
+}
+
+.share-menu {
+    position: absolute;
+    bottom: 100%; /* Opens upwards to avoid being cut off or requiring scroll if at bottom of viewport? No, standard is downwards. */
+    /* Wait, if it's in the middle of page, downwards is fine. If bottom, upwards.
+       Let's stick to downwards (top: 100%) as it's more common unless specifically footer.
+       This is a section in the middle/bottom. Let's try top: 100% + margin.
+    */
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    width: 200px;
+    z-index: 100;
+    padding: 8px 0;
+    margin-top: 8px;
+    display: none;
+    text-align: left;
+}
+
+.share-menu[aria-hidden="false"] {
+    display: block;
+}
+
+.share-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.share-options li {
+    display: block;
+    margin: 0;
+}
+
+.share-options a {
+    display: block;
+    padding: 10px 20px;
+    color: #202124;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.share-options a:hover {
+    background-color: #f8f9fa;
+}
+
+.copy-link-button {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    border-top: 1px solid #dadce0;
+    padding: 10px 20px;
+    text-align: left;
+    font-family: inherit;
+    font-size: 14px;
+    color: #202124;
+    cursor: pointer;
+}
+
+.copy-link-button:hover {
+    background-color: #f8f9fa;
+}
+
 .stats {
     background-color: #202124;
     color: white;
@@ -421,4 +510,27 @@ footer {
     .split-layout {
         flex-direction: column;
     }
+}
+
+/* Accessibility */
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1a73e8;
+    color: white;
+    padding: 8px 16px;
+    z-index: 1000;
+    text-decoration: none;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+*:focus-visible {
+    outline: 2px solid #1a73e8;
+    outline-offset: 2px;
 }
