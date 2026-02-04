@@ -6,6 +6,7 @@
     <title>Med-PaLM</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,500&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -42,6 +43,20 @@
                 <li><a href="https://www.youtube.com/watch?v=3Ud-BMOCkDI&t=14s&ab_channel=Google">The Check Up</a></li>
                 <li><a href="https://cloud.google.com/blog/topics/healthcare-life-sciences/sharing-google-med-palm-2-medical-large-language-model">Google Cloud: Med-PaLM 2</a></li>
                 <li><a href="https://cloud.google.com/blog/topics/healthcare-life-sciences/introducing-medlm-for-the-healthcare-industry">Google Cloud: MedLM</a></li>
+                <li>
+                    <div class="share-container">
+                        <button class="share-button" aria-haspopup="true" aria-expanded="false">
+                            Share
+                        </button>
+                        <div class="share-menu" role="menu" hidden>
+                            <a href="#" class="share-link" data-platform="twitter" role="menuitem">Twitter</a>
+                            <a href="#" class="share-link" data-platform="facebook" role="menuitem">Facebook</a>
+                            <a href="#" class="share-link" data-platform="linkedin" role="menuitem">LinkedIn</a>
+                            <a href="#" class="share-link" data-platform="email" role="menuitem">Email</a>
+                            <button class="copy-link-button" role="menuitem">Copy link</button>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -69,7 +84,7 @@
             <div class="carousel-container">
                 <h3>Check out how Med-PaLM 2 answers medical questions</h3>
                 <div class="carousel-wrapper">
-                    <button class="prev" onclick="plusSlides(-1)">❮</button>
+                    <button class="prev">❮</button>
                     <div class="carousel-slides">
                         <div class="carousel-slide fade">
                             <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPalm_Carousel1.width-800.png" alt="Med-PaLM Example 1">
@@ -81,7 +96,7 @@
                             <img src="https://storage.googleapis.com/gweb-research2023-media/images/MedPalm_Carousel3.width-800.png" alt="Med-PaLM Example 3">
                         </div>
                     </div>
-                    <button class="next" onclick="plusSlides(1)">❯</button>
+                    <button class="next">❯</button>
                 </div>
                 <p class="disclaimer">*Examples only. Med-PaLM 2 is currently being evaluated to ensure safe and responsible use.</p>
             </div>
@@ -264,27 +279,5 @@
             <a href="https://support.google.com/?hl=en">Help</a>
         </div>
     </footer>
-
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("carousel-slide");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].className = slides[i].className.replace(" active", "");
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex-1].style.display = "block";
-            slides[slideIndex-1].className += " active";
-        }
-    </script>
 </body>
 </html>
